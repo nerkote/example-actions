@@ -35,10 +35,11 @@ jobs:
         id: start
         run: |
           SCAN_ID=$(nexploit-cli scan:run                                                 \
-            --test csrf dom_xss header_security secret_tokens                             \
-            --name "🥤 Juice-Shop for a '${GITHUB_REF##*/}' branch #${GITHUB_RUN_NUMBER}" \
-            --crawler http://juiceshop.local:3000                                         \
-            --repeater ${{ secrets.REPEATER }}                                            \
+            --test csrf dom_xss xss default_login_location header_security secret_tokens directory_listing full_path_disclosure                            \
+            --name "💠 BrokenCrystals 💠 Scan for a '${GITHUB_REF##*/}' branch #${GITHUB_RUN_NUMBER}" \
+            --crawler https://brokencrystals.com                                         \
+            --integration "github:example-actions"                                         \
+            --project "pJEPcnKcRWptXg2Gv1irYZ"                                         \
             --token ${{ secrets.NEXPLOIT_TOKEN }})
           echo "SCAN_ID=$SCAN_ID" >> $GITHUB_ENV
       - name: Get the output scan url 🔗
@@ -50,7 +51,7 @@ jobs:
             --interval 30s                        \
             --timeout 20m                         \
             --token ${{ secrets.NEXPLOIT_TOKEN }} \
-            --breakpoint medium_issue $SCAN_ID
+            --breakpoint high_issue $SCAN_ID
       - name: Stop Scan 🛑
         continue-on-error: true
         if: ${{ always() }}
