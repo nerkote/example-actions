@@ -35,9 +35,9 @@ jobs:
         id: start
         run: |
           SCAN_ID=$(nexploit-cli scan:run                                                 \
-            --test csrf dom_xss xss default_login_location header_security secret_tokens directory_listing full_path_disclosure                            \
-            --name "💠 BrokenCrystals 💠 Scan for a '${GITHUB_REF##*/}' branch #${GITHUB_RUN_NUMBER}" \
-            --crawler https://brokencrystals.com                                         \
+            --test dom_xss xss default_login_location header_security secret_tokens directory_listing full_path_disclosure                            \
+            --name "💠 MoneyMan 💠 Scan for a '${GITHUB_REF##*/}' branch #${GITHUB_RUN_NUMBER}" \
+            --crawler https://es-golf.moneyman.ru/secci.php?pers=&tae=Test&back=200&back_date=2022-01-29&current_time=30&current_sum=200                                         \
             --integration "github:example-actions"                                         \
             --project "pJEPcnKcRWptXg2Gv1irYZ"                                         \
             --token ${{ secrets.NEXPLOIT_TOKEN }})
