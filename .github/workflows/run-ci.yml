@@ -36,7 +36,7 @@ jobs:
         run: |
           SCAN_ID=$(nexploit-cli scan:run                                                 \
             --test dom_xss xss default_login_location header_security secret_tokens directory_listing full_path_disclosure                            \
-            --name "💠 MoneyMan 💠 Scan for a '${GITHUB_REF##*/}' branch #${GITHUB_RUN_NUMBER}" \
+            --name "💠 BrokenCrystal 💠 Scan for a '${GITHUB_REF##*/}' branch #${GITHUB_RUN_NUMBER}" \
             --crawler "https://brokencrystals.com"                                         \
             --integration "github:example-actions"                                         \
             --project "pJEPcnKcRWptXg2Gv1irYZ"                                         \
