@@ -41,8 +41,7 @@ jobs:
           SCAN_ID=$(nexploit-cli scan:run                                                 \
             --test csrf dom_xss header_security secret_tokens open_buckets                 \
             --name "💎 BrokenCrystals for a '${GITHUB_REF##*/}' branch #${GITHUB_RUN_NUMBER}" \
-            --crawler https://brokencrystals.com/api/config https://brokencrystals.com/  \
-            --repeater ${{ secrets.REPEATER }}                                            \
+            --crawler https://brokencrystals.local/api/config https://brokencrystals.local/  \
             --token ${{ secrets.NEXPLOIT_TOKEN }})
           echo "SCAN_ID=$SCAN_ID" >> $GITHUB_ENV
       - name: Get the output scan url 🔗
