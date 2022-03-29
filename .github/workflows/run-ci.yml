@@ -41,7 +41,7 @@ jobs:
             --crawler "https://brokencrystals.com" \
             --integration "github:example-actions" \
             --project "rXR1pW4zT3jKaWkXonZghd" \
-            --token ${{ secrets.NEXPLOIT_TOKEN }})
+            --token ${{ secrets.NEXPLOIT_TOKEN }} )
           echo "SCAN_ID=$SCAN_ID" >> $GITHUB_ENV
       - name: Get the output scan url 🔗
         run: |
