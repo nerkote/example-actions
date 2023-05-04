@@ -1,4 +1,4 @@
-# How to Start123
+# How to Start
 
 1. Fork this repo.
 2. Set `NEXPLOIT_TOKEN` and `REPEATER` secrets in your repo settings.
